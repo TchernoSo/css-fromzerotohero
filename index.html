@@ -1,14 +1,14 @@
-CSS Introduction
+<!-- CSS Introduction -->
 ##########################
 CSS is the language we use to style a Web page.
 CSS stands for Cascading Style Sheets
 CSS saves a lot of work. It can control the layout of multiple web pages all at once
 ##########################
-Why Use CSS?
+<!-- Why Use CSS? -->
 CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.
 CSS removed the style formatting from the HTML page
 ##########################
-CSS Syntax
+<!-- CSS Syntax -->
 A CSS rule consists of a selector and a declaration block.
 
 SELECTOR
@@ -22,7 +22,7 @@ The declaration block contains one or more declarations separated by semicolons.
 Each declaration includes a CSS property name and a value, separated by a colon.
 ##########################
 
-Three Ways to Insert CSS
+<!-- Three Ways to Insert CSS -->
 -External CSS 
 <link rel="stylesheet" href="mystyle.css">
 -Internal CSS
@@ -37,8 +37,23 @@ Three Ways to Insert CSS
     }
     </style>
 -Inline CSS
-<h1 style="color:blue;text-align:center;">This is a heading</h1>
+<h1 style="color:blue;text-align:center;">This is a heading</h1> Has higher pryority then ID, class and after Internal and External
 
+<!-- CSS The !important Rule -->
+The !important rule in CSS is used to add more importance to a property/value than normal.
+In fact, if you use the !important rule, it will override ALL previous styling rules for that specific property on that element!
+
+#myid {
+  background-color: blue;
+}
+
+.myclass {
+  background-color: gray;
+}
+
+p {
+  background-color: red !important;
+}
 ##########################
 
 CSS selectors are used to "find" (or select) the HTML elements you want to style.
@@ -51,21 +66,21 @@ Pseudo-class selectors (select elements based on a certain state)
 Pseudo-elements selectors (select and style a part of an element)
 Attribute selectors (select elements based on an attribute or attribute value)
 
-The CSS element Selector
+<!-- The CSS element Selector -->
 
 p {
     text-align: center;
     color: red;
   }
 
-The CSS id Selector ##########################
+<!-- The CSS id Selector ########################## -->
 
 #para1 {
     text-align: center;
     color: red;
   }
 
-The CSS class Selector ##########################
+<!-- The CSS class Selector ########################## -->
 
 .center {
     text-align: center;
@@ -86,14 +101,14 @@ The CSS Universal Selector / The universal selector (*) selects all HTML element
   }
 
 
-The CSS Grouping Selector ##########################
+<!-- The CSS Grouping Selector ########################## -->
 h1, h2, p {
     text-align: center;
     color: red;
   }
 
 ##########################
-CSS Comments
+<!-- CSS Comments -->
 /* This is a single-line comment */
 
 ##########################
@@ -108,19 +123,62 @@ CSS Colors
 <h1 style="background-color:Violet;">Violet</h1>
 <h1 style="background-color:LightGray;">LightGray</h1>
 
+<!-- Color Keywords -->
+The transparent, currentcolor, and inherit keywords.
+The transparent keyword is used to make a color transparent. This is often used to make a transparent background color for an element.
+div {
+  background-color: transparent;
+}
+The currentcolor keyword is like a variable that holds the current value of the color property of an element.
+div {
+  background-color: currentcolor;
+}
+
+<!-- CSS Gradients -->
+CSS Linear Gradients ##########################
+background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+#grad {
+  background-image: linear-gradient(red, yellow);
+}
+
+--- Left to Right ########
+#grad {
+  background-image: linear-gradient(to right, red , yellow);
+}
+--- Direction - Diagonal ########
+#grad {
+  background-image: linear-gradient(to bottom right, red, yellow);
+}
+--- Angles ########
+background-image: linear-gradient(angle, color-stop1, color-stop2);
+#grad {
+  background-image: linear-gradient(180deg, red, yellow);
+}
+--- Transparency ########
+#grad {
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+Set Shape
+#grad {
+  height: 150px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, red, yellow, green);
+}
 ##########################
-CSS Backgrounds
+<!-- CSS Backgrounds -->
 You will learn about the following CSS background properties:
 
 background-color / The background-color property specifies the background color of an element.
-background-image / he background-image property specifies an image to use as the background of an element.
+background-image / The background-image property specifies an image to use as the background of an element.
 background-repeat/ By default, the background-image property repeats an image both horizontally and vertically.
 background-attachment / The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)
 background-position / The background-position property is used to specify the position of the background image.
 background (shorthand property)
 
 
-Opacity / Transparency ##########################
+<!-- Opacity / Transparency ########################## -->
 div {
     background-color: green;
     opacity: 0.3; 30%
@@ -132,7 +190,7 @@ div {
   }
 
 ##########################
-Background image
+<!-- Background image -->
   body {
     background-image: url("paper.gif");
   }
@@ -141,7 +199,7 @@ Background image
     background-image: url("paper.gif");
   }
 ##########################
-CSS background-repeat: no-repeat
+<!-- CSS background-repeat: no-repeat -->
 body {
     background-image: url("img_tree.png");
     background-repeat: no-repeat;
@@ -153,7 +211,7 @@ body {
   }
 
 ##########################
-CSS background-position
+<!-- CSS background-position -->
 Position the background image in the top-right corner: 
 body {
     background-image: url("img_tree.png");
@@ -162,7 +220,7 @@ body {
   }
 
 ##########################
-CSS background-attachment
+<!-- CSS background-attachment -->
 Specify that the background image should be fixed:
 body {
     background-image: url("img_tree.png");
@@ -181,7 +239,7 @@ body {
   }
 
 ##########################
-CSS background - Shorthand property
+<!-- CSS background - Shorthand property -->
 You can use the shorthand property background:
 body {
     background: #ffffff url("img_tree.png") no-repeat right top;
@@ -194,13 +252,51 @@ When using the shorthand property the order of the property values is:
   4-background-attachment
   5-background-position
 
+
+<!-- Multiple Backgrounds -->
+#example1 {
+  background-image: url(img_flwr.gif), url(paper.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  background-size: 50px, 130px or auto;
+}
+
+shorthand property ##########################
+#example1 {
+  background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+}
+
+<!-- Background Size -->
+The CSS background-size property allows you to specify the size of background images/The two other possible values for background-size are contain and cover.
+#div1 {
+  background: url(img_flower.jpg);
+  background-size: 100px 80px; /contain /cover
+  background-repeat: no-repeat;
+}
+
+<!-- Full Size Background Image -->
+Now we want to have a background image on a website that covers the entire browser window at all times.
+html {
+  background: url(img_man.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+<!-- Hero Image -->
+You could also use different background properties on a <div> to create a hero image (a large image with text), and place it where you want.
+
+.hero-image {
+    background: url(img_man.jpg) no-repeat center;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+  }
 ##########################
-CSS Border
+<!-- CSS Border -->
 p.one {
     border-style: solid;
   }
 
-Specific Side Widths ##########################
+<!-- Specific Side Widths ########################## -->
 p.one {
     border-style: solid;
     border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
@@ -213,13 +309,13 @@ p.three {
     border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
   }
 
-CSS Border Color ##########################
+<!-- CSS Border Color ########################## -->
 p.one {
     border-style: solid;
     border-color: red;
   }
 
-CSS Border - Individual Sides ##########################
+<!-- CSS Border - Individual Sides ########################## -->
 p {
     border-top-style: dotted;
     border-right-style: solid;
@@ -242,7 +338,7 @@ p {
     border-left: 6px solid red;
   }
 
-CSS Rounded Borders ##########################
+<!-- CSS Rounded Borders ########################## -->
 The border-radius property is used to add rounded borders to an element
 p {
     border: 2px solid red;
@@ -250,7 +346,7 @@ p {
   }
 
 ##########################
-CSS Margins
+<!-- CSS Margins -->
 Margins are used to create space around elements, outside of any defined borders.
 all four margins are 25px
 p {
@@ -279,41 +375,42 @@ p {
   }
 
 
-The auto Value ##########################
+<!-- The auto Value ########################## -->
 You can set the margin property to auto to horizontally center the element within its container.
 p {
     margin: auto;
   }
 ##########################
-CSS Padding
+<!-- CSS Padding -->
 Padding is used to create space around an element's content, inside of any defined borders
 
 Uses the same method as margin
 
 ##########################
-CSS Height, Width and Max-width
+<!-- CSS Height, Width and Max-width -->
 The CSS height and width properties are used to set the height and width of an element.
 The CSS max-width property is used to set the maximum width of an element
+The problem with the <div> above occurs when the browser window is smaller than the width of the element. The browser then adds a horizontal scrollbar to the page. Using max-width instead, in this situation, will improve the browser's handling of small windows. This is important when making a site usable on small devices
 
 ##########################
-CSS Box Model
+<!-- CSS Box Model -->
 Content - The content of the box, where text and images appear
 Padding - Clears an area around the content. The padding is transparent
 Border - A border that goes around the padding and content
 Margin - Clears an area outside the border. The margin is transparent
 
 ##########################
-CSS Text
+<!-- CSS Text -->
 CSS has a lot of properties for formatting text.
 
-Text Color and Background Color ##########################
+<!-- Text Color and Background Color ########################## -->
 h1 {
     background-color: black;
     color: white;
   }
 
 
-Text Alignment and Text Direction ##########################
+<!-- Text Alignment and Text Direction ########################## -->
 
 text-align / The text-align property is used to set the horizontal alignment of a text. A text can be left or right aligned, centered, or justified.
 text-align-last / The text-align-last property specifies how to align the last line of a text.
@@ -321,7 +418,7 @@ direction /The direction and unicode-bidi properties can be used to change the t
 unicode-bidi / The direction and unicode-bidi properties can be used to change the text direction of an element.
 vertical-align / The vertical-align property sets the vertical alignment of an element.
 
-Text Alignment ##########################
+<!-- Text Alignment ########################## -->
 h1 {
     text-align: center;
   }
@@ -339,7 +436,7 @@ h1 {
     text-align: justify;
   }
 
-Vertical Alignment ##########################
+<!-- Vertical Alignment ########################## -->
 img.a {
     vertical-align: baseline;
   }
@@ -360,7 +457,7 @@ img.a {
     vertical-align: super;
   }
 
-Text Decoration ##########################
+<!-- Text Decoration ########################## -->
 
 text-decoration-line / The text-decoration-line property is used to add a decoration line to text.
 text-decoration-color
@@ -370,7 +467,7 @@ text-decoration
 
 
 
-text-decoration-line ##########################
+<!-- text-decoration-line ########################## -->
 h1 {
     text-decoration-line: overline;
   }
@@ -387,19 +484,19 @@ h1 {
     text-decoration-line: overline underline;
   }
 
-Specify a Color for the Decoration Line ##########################
+<!-- Specify a Color for the Decoration Line ########################## -->
 p {
     text-decoration-line: overline underline;
     text-decoration-color: purple;
   }
 
-Specify the Thickness for the Decoration Line ##########################
+<!-- Specify the Thickness for the Decoration Line ########################## -->
 h2 {
     text-decoration-line: underline;
     text-decoration-thickness: 5px;
   }
 
-Shorthand Property ##########################
+<!-- Shorthand Property ########################## -->
 
 The text-decoration property is a shorthand property for:
 
@@ -418,7 +515,7 @@ a {
     text-decoration: none;
   }
 
-CSS Text Transformation ##########################
+<!-- CSS Text Transformation ########################## -->
 The text-transform property is used to specify uppercase and lowercase letters in a text.
 p.uppercase {
     text-transform: uppercase;
@@ -432,7 +529,7 @@ p.uppercase {
     text-transform: capitalize;
   }
 
-Text Spacing ##########################
+<!-- Text Spacing ########################## -->
 In this chapter you will learn about the following properties:
 
 -text-indent / The text-indent property is used to specify the indentation of the first line of a text
@@ -457,7 +554,7 @@ p {
   }
 
 
-Text Shadow ##########################
+<!-- Text Shadow ########################## -->
 The text-shadow property adds shadow to text.
 In its simplest use, you only specify the horizontal shadow (2px) and the vertical shadow (2px)
 h1 {
@@ -477,3 +574,571 @@ h1 {
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
+
+You can also use the box-shadow property to create paper-like images or cards:
+div.polaroid {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+##########################
+
+<!-- CSS Fonts -->
+Choosing the right font has a huge impact on how the readers experience a website.
+The right font can create a strong identity for your brand.
+----The font-family property should hold several font names as a "fallback" system, to ensure maximum compatibility between browsers/operating systems. Start with the font you want, and end with a generic family
+
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.p2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+
+<!-- Best Web Safe Fonts for HTML and CSS ########################## -->
+The following list are the best web safe fonts for HTML and CSS:
+
+Arial (sans-serif)
+Verdana (sans-serif)
+Tahoma (sans-serif)
+Trebuchet MS (sans-serif)
+Times New Roman (serif)
+Georgia (serif)
+Garamond (serif)
+Courier New (monospace)
+Brush Script MT (cursive)
+
+
+<!-- CSS Font Style ########################## -->
+
+p.normal {
+  font-style: normal;
+}
+
+p.italic {
+  font-style: italic;
+}
+
+<!-- Font Weight ########################## -->
+
+p.normal {
+  font-weight: normal;
+}
+
+p.thick {
+  font-weight: bold;
+}
+
+<!-- Font Variant -->
+
+p.normal {
+  font-variant: normal;
+}
+
+p.small {
+  font-variant: small-caps;
+}
+
+<!-- Font Size -->
+The font-size property sets the size of the text.
+######## Setting the text size with pixels gives you full control over the text size: ########
+h1 {
+  font-size: 40px;
+}
+
+<!-- Responsive Font Size -->
+The text size can be set with a vw unit, which means the "viewport width".
+That way the text size will follow the size of the browser window:
+Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
+
+h1 {
+  font-size:10vw;
+  }
+
+
+<!-- CSS Google Fonts -->
+If you do not want to use any of the standard fonts in HTML, you can use Google Fonts.
+Google Fonts are free to use, and have more than 1000 fonts to choose from.
+Just add a special style sheet link in the <head> section and then refer to the font in the CSS.
+  
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+ body {
+  font-family: "Sofia", sans-serif;
+}
+
+Use Multiple Google Fonts ##########################
+To use multiple Google fonts, just separate the font names with a pipe character (|), like this:
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+
+<style>
+  h1.a {font-family: "Audiowide", sans-serif;}
+  h1.b {font-family: "Sofia", sans-serif;}
+  h1.c {font-family: "Trirong", serif;}
+</style>
+
+
+Enabling Font Effects ##########################
+Google has also enabled different font effects that you can use.
+First add effect=effectname to the Google API, then add a special class name to the element that is going to use the special effect. The class name always starts with font-effect- and ends with the effectname.
+
+<h1 class="font-effect-fire">Sofia on Fire</h1>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+<style>
+body {
+  font-family: "Sofia", sans-serif;
+  font-size: 30px;
+}
+</style>
+
+To request multiple font effects, just separate the effect names with a pipe character (|), like this:
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+
+<style>
+  body {
+    font-family: "Sofia", sans-serif;
+    font-size: 30px;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h1 class="font-effect-neon">Neon Effect</h1>
+  <h1 class="font-effect-outline">Outline Effect</h1>
+  <h1 class="font-effect-emboss">Emboss Effect</h1>
+  <h1 class="font-effect-shadow-multiple">Multiple Shadow Effect</h1>
+  
+  </body>
+
+
+<!-- Font Pairings -->
+
+Check out for great font combinations for your website
+
+<!-- The CSS Font Property -->
+The font property is a shorthand property for:
+
+font-style
+font-variant
+font-weight
+font-size/line-height
+font-family
+Note: The font-size and font-family values are required. If one of the other values is missing, their default value are used.
+
+p.a {
+  font: 20px Arial, sans-serif;
+}
+
+p.b {
+  font: italic small-caps bold 12px/30px Georgia, serif;
+}
+
+<!-- CSS Icons -->
+The simplest way to add an icon to your HTML page, is with an icon library, such as Font Awesome.
+To use the Font Awesome icons, go to fontawesome.com, sign in, and get a code to add in the <head> section of your HTML page:
+
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+  <body>
+
+    <i class="fas fa-cloud"></i>
+    <i class="fas fa-heart"></i>
+    <i class="fas fa-car"></i>
+    <i class="fas fa-file"></i>
+    <i class="fas fa-bars"></i>
+    
+    </body>
+
+Bootstrap Icons ##########################
+To use the Bootstrap glyphicons, add the following line inside the <head> section of your HTML page:
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<body>
+
+  <i class="glyphicon glyphicon-cloud"></i>
+  <i class="glyphicon glyphicon-remove"></i>
+  <i class="glyphicon glyphicon-user"></i>
+  <i class="glyphicon glyphicon-envelope"></i>
+  <i class="glyphicon glyphicon-thumbs-up"></i>
+  
+  </body>
+
+
+<!-- CSS Links -->
+With CSS, links can be styled in many different ways.
+In addition, links can be styled differently depending on what state they are in.
+The four links states are:
+
+a:link - a normal, unvisited link
+a:visited - a link the user has visited
+a:hover - a link when the user mouses over it
+a:active - a link the moment it is clicked
+
+Note: a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective! a:active MUST come after a:hover in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive.
+
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+
+Background Color ##########################
+a:link {
+  background-color: yellow;
+}
+
+a:visited {
+  background-color: cyan;
+}
+
+a:hover {
+  background-color: lightgreen;
+}
+
+a:active {
+  background-color: hotpink;
+} 
+
+Link Buttons ##########################
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+#OR
+
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: green;
+  color: white;
+}
+
+
+More Examples ##########################
+a.one:link {color: #ff0000;}
+a.one:visited {color: #0000ff;}
+a.one:hover {color: #ffcc00;}
+
+a.two:link {color: #ff0000;}
+a.two:visited {color: #0000ff;}
+a.two:hover {font-size: 150%;}
+
+a.three:link {color: #ff0000;}
+a.three:visited {color: #0000ff;}
+a.three:hover {background: #66ff66;}
+
+a.four:link {color: #ff0000;}
+a.four:visited {color: #0000ff;}
+a.four:hover {font-family: monospace;}
+
+a.five:link {color: #ff0000; text-decoration: none;}
+a.five:visited {color: #0000ff; text-decoration: none;}
+a.five:hover {text-decoration: underline;}
+
+
+
+<!-- CSS Lists  -->
+
+Check to customize list
+
+Remove Default Settings ##########################
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+<!-- CSS Tables -->
+
+Check to customize table
+
+td {
+  text-align: center;
+}
+
+th, td {
+  padding: 15px;
+}
+
+Hoverable Table ##########################
+tr:hover {background-color: coral;}
+
+
+Responsive Table ##########################
+Add a container element (like <div>) with overflow-x:auto around the <table> element to make it responsive
+
+<!-- CSS Layout - The display Property -->
+The display property is the most important CSS property for controlling layout.
+Every HTML element has a default display value, depending on what type of element it is. The default display value for most elements is block or inline.
+The display property is used to change the default display behavior of HTML elements.
+
+Examples of block-level elements:
+
+<div>
+<h1> - <h6>
+<p>
+<form>
+<header>
+<footer>
+<section>
+
+Examples of inline elements:
+
+<span>
+<a>
+<img>
+
+The display Property Values ##########################
+
+Value	        /Description
+inline	       /Displays an element as an inline element
+block	        /Displays an element as a block element
+contents	       /Makes the container disappear, making the child elements children of the element the next level up in the DOM
+flex	        /Displays an element as a block-level flex container
+grid	        /Displays an element as a block-level grid container
+inline-block	       /Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values, great to Create Navigation Links
+inline-flex	       /Displays an element as an inline-level flex container
+inline-grid	       /Displays an element as an inline-level grid container
+inline-table	       /The element is displayed as an inline-level table
+list-item	        /Let the element behave like a <li> element
+run-in	        /Displays an element as either block or inline, depending on context
+table	        /Let the element behave like a <table> element
+table-caption	       /Let the element behave like a <caption> element
+table-column-group	       /Let the element behave like a <colgroup> element
+table-header-group	       /Let the element behave like a <thead> element
+table-footer-group	       /Let the element behave like a <tfoot> element
+table-row-group	       /Let the element behave like a <tbody> element
+table-cell	       /Let the element behave like a <td> element
+table-column	       /Let the element behave like a <col> element
+table-row	       /Let the element behave like a <tr> element
+none	        /The element is completely removed
+initial	       /Sets this property to its default value
+inherit	       /Inherits this property from its parent element
+
+
+Display: none; ########
+display: none; is commonly used with JavaScript to hide and show elements without deleting and recreating them.
+It is styled with CSS, and we use JavaScript to show it (change it to (display: block;). But also can be used in Pseudo-class
+
+h1.hidden {
+  display: none;
+}
+
+#OR
+div:hover p {
+  display: block;
+}
+<div>Hover over this div element to show the p element
+  <p>Tada! Here I am!</p>
+</div>
+
+Hide an Element - display:none or visibility:hidden? ##########################
+Hiding an element can be done by setting the display property to none. The element will be hidden, and the page will be displayed as if the element is not there:
+The visibility:hidden element will still take up the same space as before. The element will be hidden, but still affect the layout:
+
+h1.hidden {
+  visibility: hidden;
+}
+
+
+Display: inline; ########
+Display a list of links as a horizontal menu
+
+li {
+  display: inline;
+}
+
+<ul>
+  <li><a href="/html/default.asp" target="_blank">HTML</a></li>
+  <li><a href="/css/default.asp" target="_blank">CSS</a></li>
+  <li><a href="/js/default.asp" target="_blank">JavaScript</a></li>
+</ul>
+
+
+<!-- CSS Layout - The position Property -->
+The position property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky).
+HTML elements are positioned static by default.
+
+position: relative ##########################
+An element with position: relative; is positioned relative to its normal position.
+Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position.
+
+position: absolute ##########################
+An element with position: absolute; is positioned relative to the nearest positioned ancestor
+Absolute positioned elements are removed from the normal flow, and can overlap elements. Setting the top, right, bottom, and left properties are allowed too
+
+position: sticky ##########################
+An element with position: sticky; is positioned based on the user's scroll position.
+A sticky element toggles between relative and fixed, depending on the scroll position.
+You must also specify at least one of top, right, bottom or left for sticky positioning to work.
+
+
+Check more info how to position text center of image
+
+<!-- The z-index Property -->
+The z-index property specifies the stack order of an element (which element should be placed in front of, or behind, the others).
+Without z-index If two positioned elements overlap each other without a z-index specified, the element defined last in the HTML code will be shown on top.
+
+<!-- CSS Layout - float and clear -->
+The CSS float property specifies how an element should float.
+The CSS clear property specifies what elements can float beside the cleared element and on which side.
+
+img {
+  float: right;
+}
+
+img {
+  float: left;
+}
+
+Normally div elements will be displayed on top of each other. However, if we use float: left we can let elements float next to each other
+
+div {
+  float: left;
+  padding: 15px;
+}
+
+Check more for manage div position, create images side by side and nav bar with float and clear ##########################
+
+
+<!-- Horizontal & Vertical Align -->
+Center Align Elements ##########################
+To horizontally center a block element (like <div>), use margin: auto;
+Setting the width of the element will prevent it from stretching out to the edges of its container.
+The element will then take up the specified width, and the remaining space will be split equally between the two margins:
+
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+Center Align Text ##########################
+To just center the text inside an element, use text-align: center;
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
+
+To center both vertically and horizontally, use padding and text-align: center ##########################
+.center {
+  padding: 70px 0;
+  border: 3px solid green;
+  text-align: center;
+}
+
+/* If the text has multiple lines, add the following: */
+.center p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+Center an Image ##########################
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+Center Vertically - Using position & transform ##########################
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+Center Vertically - Using Flexbox ########################## The best
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green;
+}
+
+<!-- CSS Combinators -->
+A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.
+A combinator is something that explains the relationship between the selectors.
+A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.
+
+There are four different combinators in CSS:
+
+descendant selector (space) /The descendant selector matches all elements that are descendants of a specified element.
+The following example selects all <p> elements inside <div> elements:
+  div p {
+    background-color: yellow;
+  }
+
+
+child selector (>) /The child selector selects all elements that are the children of a specified element.
+The following example selects all <p> elements that are children of a <div> element:
+  div > p {
+    background-color: yellow;
+  }
+
+adjacent sibling selector (+) /The adjacent sibling selector is used to select an element that is directly after another specific element.
+The following example selects the first <p> element that are placed immediately after <div> elements
+  div + p {
+    background-color: yellow;
+  }
+
+general sibling selector (~) /The general sibling selector selects all elements that are next siblings of a specified element.
+
+
+<!-- CSS Pseudo Classes & Pseudo-element -->
+:active
+:hover
+::after
+::before
+Check for more Exemples
+
+
