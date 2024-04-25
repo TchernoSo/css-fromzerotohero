@@ -1142,3 +1142,195 @@ general sibling selector (~) /The general sibling selector selects all elements 
 Check for more Exemples
 
 
+<!-- CSS 2D Transforms -->
+With the CSS transform property you can use the following 2D transformation methods:
+
+translate() / The translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis).
+div {
+  transform: translate(50px, 100px);
+}
+rotate() / The rotate() method rotates an element clockwise or counter-clockwise according to a given degree.
+div {
+  transform: rotate(20deg);
+}
+div {
+  transform: rotate(-20deg);
+}
+
+More Transform Methods
+scaleX()
+scaleY()
+scale()
+skewX()
+skewY()
+skew()
+matrix()
+
+<!-- CSS 3D Transforms -->
+With the CSS transform property you can use the following 3D transformation methods:
+
+rotateX()
+#myDiv {
+  transform: rotateX(150deg);
+}
+rotateY()
+#myDiv {
+  transform: rotateY(150deg);
+}
+rotateZ()
+#myDiv {
+  transform: rotateZ(90deg);
+}
+
+<!-- CSS Transitions -->
+CSS transitions allows you to change property values smoothly, over a given duration.
+
+transition
+transition-delay / The transition-delay property specifies a delay (in seconds) for the transition effect.
+div {
+  transition-delay: 1s;
+}
+div:hover {
+  width: 300px;
+}
+transition-duration
+transition-property
+transition-timing-function
+
+
+To create a transition effect, you must specify two things:
+
+-- the CSS property you want to add an effect to
+-- duration of the effect
+
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+
+div:hover {
+  width: 300px;
+}
+
+
+Specify the Speed Curve of the Transition
+#div1 {transition-timing-function: linear;}
+#div2 {transition-timing-function: ease;}
+#div3 {transition-timing-function: ease-in;}
+#div4 {transition-timing-function: ease-out;}
+#div5 {transition-timing-function: ease-in-out;}
+
+
+<!-- CSS Animations -->
+CSS allows animation of HTML elements without using JavaScript!
+An animation lets an element gradually change from one style to another.
+You can change as many CSS properties you want, as many times as you want.
+To use CSS animation, you must first specify some keyframes for the animation.
+Keyframes hold what styles the element will have at certain times.
+
+
+@keyframes / When you specify CSS styles inside the @keyframes rule, the animation will gradually change from the current style to the new style at certain times.
+animation-name
+animation-duration 
+animation-delay / The animation-delay property specifies a delay for the start of an animation. / animation-delay: 2s;
+animation-iteration-count / Set How Many Times an Animation Should Run / animation-iteration-count: 3; animation-iteration-count: infinite;
+animation-direction / property specifies whether an animation should be played forwards, backwards or in alternate cycles. / animation-direction: reverse;
+animation-timing-function / property specifies the speed curve of the animation.
+animation-fill-mode / Let the div element retain the style values set by the last keyframe when the animation ends, stays static / animation-fill-mode: forwards;
+animation / Shorthand Property / animation: example 5s linear 2s infinite alternate;
+
+
+/* The animation code */
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+/* The element to apply the animation to */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+<!-- Images  -->
+
+Check for more info how to style a image and resize, using CSS properties and methods
+Interesting feactures... Object fit and Masking
+
+<!-- Buttons -->
+Check for more info how to style a button and resize, using CSS properties and methods
+Interesting feactures... Shadow Buttons/ Animated Buttons
+
+<!-- CSS Media Queries -->
+Check for more info how to use Media Queries 
+Interesting feactures... width and height of the viewport, orientation of the viewport (landscape or portrait) and resolution
+
+<!-- CSS Flexbox -->
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+To start using the Flexbox model, you need to first define a flex container.
+
+<div class="flex-container"></div>
+
+The flex container becomes flexible by setting the display property to flex
+.flex-container {
+  display: flex;
+}
+
+The flex-direction property defines in which direction the container wants to stack the flex items.
+.flex-container {
+  display: flex;
+  flex-direction: column;  value stacks the flex items vertically (from top to bottom)
+}
+
+flex-direction: column-reverse;  value stacks the flex items vertically (but from bottom to top)
+
+flex-direction: row; The row value stacks the flex items horizontally (from left to right)
+
+flex-direction: row-reverse;  value stacks the flex items horizontally (but from right to left)
+
+
+The flex-wrap Property ########
+The flex-wrap property specifies whether the flex items should wrap or not.
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+The justify-content Property ########
+The center value aligns the flex items at the center of the container
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+justify-content: flex-start; The flex-start value aligns the flex items at the beginning of the container (this is default)
+
+justify-content: flex-end; The flex-end value aligns the flex items at the end of the container
+
+justify-content: space-around; The space-around value displays the flex items with space before, between, and after the lines
+
+justify-content: space-between; The space-between value displays the flex items with space between the lines
+
+
+The align-items Property ########
+Is used to align items inside of their container from the right
+
+The center value aligns the flex items in the middle of the container:
+
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: center;
+}
+
+align-items: flex-start; value aligns the flex items at the top of the container
+
+align-items: flex-end; value aligns the flex items at the bottom of the container
+
+align-items: stretch; value stretches the flex items to fill the container (this is default)
