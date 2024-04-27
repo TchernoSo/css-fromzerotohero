@@ -1334,3 +1334,82 @@ align-items: flex-start; value aligns the flex items at the top of the container
 align-items: flex-end; value aligns the flex items at the bottom of the container
 
 align-items: stretch; value stretches the flex items to fill the container (this is default)
+
+
+<!-- Responsive Web Design -->
+Building a Responsive Grid-View
+A responsive grid-view often has 12 columns, and has a total width of 100%, and will shrink and expand as you resize the browser window.
+
+Typical Device Breakpoints
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+
+Responsive Web Design - Images/Videos ##########################
+If the width property is set to a percentage and the height property is set to "auto", the image will be responsive and scale up and down:
+img {
+  width: 100%;
+  height: auto;
+}
+
+If the max-width property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size:
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+Different Images for Different Devices ##########################
+
+/* For width smaller than 400px: */
+body {
+  background-image: url('img_smallflower.jpg');
+}
+
+/* For width 400px and larger: */
+@media only screen and (min-width: 400px) {
+  body {
+    background-image: url('img_flowers.jpg');
+  }
+}
+
+The HTML <picture> Element ##########################
+The HTML <picture> element gives web developers more flexibility in specifying image resources.
+You set up different sources, and the first source that fits the preferences is the one being used
+<picture>
+  <source srcset="img_smallflower.jpg" media="(max-width: 400px)">
+  <source srcset="img_flowers.jpg">
+  <img src="img_flowers.jpg" alt="Flowers">
+</picture>
+
+You should also define an <img> element for browsers that do not support the <picture> element.
+
+
+<!-- CSS Grid Layout -->
+The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
+n HTML element becomes a grid container when its display property is set to grid or inline-grid.
+.grid-container {
+  display: grid;
+}
+
+.grid-container {
+  display: inline-grid;
+}
+
+You can adjust the gap size by using one of the following properties:
+
+column-gap
+row-gap
+gap
+
+.grid-container {
+  display: grid;
+  column-gap: 50px; row-gap: 50px;
+}
+
+The gap property is a shorthand property for the row-gap and the column-gap properties:
+gap: 50px 100px;
